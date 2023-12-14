@@ -31,30 +31,18 @@ den Faktor pflegen kann.
 Die Elfen arbeiteten an einem Plugin, um sicherzustellen, dass die
 Energie gerecht auf die Kinder verteilt wird. Das Plugin sollte:
 
--   Überprüfen, ob die verfügbare Energie im Tank ausreicht, um die
-    > Energie für das aktuelle Geschenke abzudecken.
+-   Überprüfen, ob die verfügbare Energie im Tank ausreicht, um die Energie für das aktuelle Geschenke abzudecken.
 
--   Die Energie unter Berücksichtigung den Schlimmheitsfaktor sowie der
-    > verfügbaren Energie im Energietank verteilen. Kinder mit wenig
-    > Schlimmheitsfaktor sollten das meiste erhalten, während Kinder mit
-    > hohem Schlimmheitsfaktor das Wenigste bekommen.
+-   Die Energie unter Berücksichtigung den Schlimmheitsfaktor sowie der verfügbaren Energie im Energietank verteilen. Kinder mit wenig Schlimmheitsfaktor sollten das meiste erhalten, während Kinder mit  hohem Schlimmheitsfaktor das Wenigste bekommen.
 
--   Falls die verfügbare Energie nicht ausreicht, um alle Geschenke zu
-    > versorgen, sollte die Verkaufschance nur mehr als verloren
-    > abgeschlossen werden können.
+-   Falls die verfügbare Energie nicht ausreicht, um alle Geschenke zu Versorgen, sollte die Verkaufschance nur mehr als verloren abgeschlossen werden können.
 
--   Verkaufschance die als gewonnen abgeschlossen werden erhalten die
-    > Energie aus dem Energietank in diesem Schritt. Es muss
-    > sichergestellt sein, dass die Energie auch wirklich dem Speicher
-    > entzogen worden ist.
+-   Verkaufschance die als gewonnen abgeschlossen werden erhalten die Energie aus dem Energietank in diesem Schritt. Es muss sichergestellt sein, dass die Energie auch wirklich dem Speicher entzogen worden ist.
 
--   Ist bei einer Verkaufschance kein Kind (Kontakt) hinterlegt, so kann
-    > die Verkaufschance nicht abgeschlossen werden.
+-   Ist bei einer Verkaufschance kein Kind (Kontakt) hinterlegt, so kann die Verkaufschance nicht abgeschlossen werden.
 
--   Wiederspricht im Plugin ein Regelset so soll der Elf eine
-    > Fehlermeldung erhalten. Beispiel:  
-    > „Leider ist zu wenig Energie vorhanden. Frage Santa ob er noch
-    > Energie in den Speicher laden kann“
+-   Wiederspricht im Plugin ein Regelset so soll der Elf eine Fehlermeldung erhalten. Beispiel:  
+    > „Leider ist zu wenig Energie vorhanden. Frage Santa ob er noch Energie in den Speicher laden kann“
 
 -   Die Logik zur Validierung könnte wie folgt aussehen:
 
@@ -66,13 +54,9 @@ Energie gerecht auf die Kinder verteilt wird. Das Plugin sollte:
 
         -   Selektiere alle Kinder der Verkaufschancen
 
-        -   Erstelle dir eine Liste die Energiebedarf und
-            > Schlimmheitsfaktor beinhält
+        -   Erstelle dir eine Liste die Energiebedarf und Schlimmheitsfaktor beinhält
 
-        -   Wähle so viele wie möglich sind mit dem aktuellen
-            > Energiespeicher. Du kannst die Kriterien frei wählen,
-            > berücksichtige aber allenfalls Schlimmheitsfaktor und
-            > Energiebedarf.
+        -   Wähle so viele wie möglich sind mit dem aktuellen Energiespeicher. Du kannst die Kriterien frei wählen, berücksichtige aber allenfalls Schlimmheitsfaktor und Energiebedarf.
 
         -   Prüfe ob die aktuelle Verkaufschance enthalten ist.
 
