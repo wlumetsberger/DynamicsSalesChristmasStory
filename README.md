@@ -51,6 +51,38 @@ Energie gerecht auf die Kinder verteilt wird. Das Plugin sollte:
     -   Prüfe alle offenen Verkaufschancen und deren Energiebedarf
 
         -   Selektiere Verkaufschancen die aktuell offen sind mit dem gleichen zipcode
+        -   Query = // Instantiate QueryExpression query
+var query = new QueryExpression("opportunity")
+{
+    TopCount = 50,
+    // Add all columns to opportunity
+    ColumnSet = new ColumnSet(true),
+    // Add 1 link-entity to query
+    LinkEntities =
+    {
+        // Add link-entity query_contact
+        new LinkEntity("opportunity", "contact", "parentcontactid", "contactid", JoinOperator.Inner)
+        {
+            // Add filter to contact with 1 filters
+            new FilterExpression()
+            {
+                // Add 1 filters to contact
+                Filters =
+                {
+                    // Add filter to contact with 1 conditions
+                    new FilterExpression()
+                    {
+                        // Add 1 conditions to contact
+                        Conditions =
+                        {
+                            new ConditionExpression("sa_zipcode", ConditionOperator.Equal, query_contact_Filters_sa_zipcode)
+                        }
+                    }
+                }
+            }
+        }
+    }
+};
 
         -   Selektiere alle Kinder der Verkaufschancen
 
