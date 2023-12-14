@@ -1,0 +1,13 @@
+            var fetchXml = $@"<?xml version=""1.0"" encoding=""utf-16""?>
+<fetch >
+  <entity name=""opportunity"">
+    <link-entity name=""contact"" from=""contactid"" to=""parentcontactid"" link-type=""inner"">
+      <filter type=""and"">
+        <filter>
+          <condition attribute=""sa_zipcode"" operator=""eq"" value=""{zipCodeContact}"" />
+        </filter>
+      </filter>
+    </link-entity>
+  </entity>
+</fetch>";
+            var opportunities = localPluginContext.InitiatingUserService.RetrieveMultiple(new FetchExpression(fetchXml));
