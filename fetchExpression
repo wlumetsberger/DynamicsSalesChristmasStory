@@ -1,3 +1,23 @@
+        protected override void ExecuteDataversePlugin(ILocalPluginContext localPluginContext)
+        {
+            if (localPluginContext == null)
+            {
+                throw new ArgumentNullException(nameof(localPluginContext));
+            }
+            localPluginContext.Trace($"Prüfe ob Energielevel ausreichend ist");
+
+
+            var context = localPluginContext.PluginExecutionContext;
+            var target = context.InputParameters["Target"] as Entity;
+            var preImage = context.PreEntityImages["Target"];
+
+            var contactReference =  preImage.GetAttributeValue<EntityReference>("parentcontactid");
+            localPluginContext.Trace($"ContactRef = {contactReference?.Id}");
+
+            var contact = localPluginContext.InitiatingUserService.Retrieve("contact", contactReference.Id, new ColumnSet("sa_zipcode"));
+            var zipCodeContact = contact.GetAttributeValue<string>("sa_zipcode");
+
+            //Select all Opportunities where zipcode of contact is equal 
             var fetchXml = $@"<?xml version=""1.0"" encoding=""utf-16""?>
 <fetch >
   <entity name=""opportunity"">
@@ -11,3 +31,24 @@
   </entity>
 </fetch>";
             var opportunities = localPluginContext.InitiatingUserService.RetrieveMultiple(new FetchExpression(fetchXml));
+
+
+
+            var energyStoreQurey =  new QueryExpression("sa_energystore")
+            {
+                ColumnSet = new ColumnSet("sa_energylevel", "sa_zipcode"),
+                Criteria =
+                {
+                    Conditions =
+                    {
+                        new ConditionExpression("sa_zipcode", ConditionOperator.Equal, zipCodeContact)
+                    }
+                }
+            };
+
+            var energyStoreResult = localPluginContext.InitiatingUserService.RetrieveMultiple(energyStoreQurey).Entities.FirstOrDefault();
+            var level = energyStoreResult.GetAttributeValue<double>("sa_energylevel");
+            localPluginContext.Trace($"Energyleve ist = {level}");
+           
+
+            throw new InvalidPluginExecutionException("Too less Energy");
