@@ -17,7 +17,7 @@ sollte die verfügbare Energie für die Geschenke repräsentieren. Erstelle
 die Entitäten wie sie benötigt wird um die Anforderungen der anderen
 Beispiele umsetzten zu können.
 
-## Aufgabe 2: Manuelle Ergänzung der Kontaktentität
+## Aufgabe 2: Ergänzung der Kontaktentität
 
 Um den Schlimmheitsgrad (1-100) jedes Kindes direkt in der
 Kontaktentität (repräsentiert jeweils ein Kind) zu speichern, soll die
