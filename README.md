@@ -50,7 +50,7 @@ Energie gerecht auf die Kinder verteilt wird. Das Plugin sollte:
 
     -   Prüfe alle offenen Verkaufschancen und deren Energiebedarf
 
-        -   Selektiere Verkaufschancen die aktuell offen sind
+        -   Selektiere Verkaufschancen die aktuell offen sind mit dem gleichen zipcode
 
         -   Selektiere alle Kinder der Verkaufschancen
 
