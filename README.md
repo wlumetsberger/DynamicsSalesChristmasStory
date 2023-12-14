@@ -16,7 +16,7 @@ namens "Energietank" im Dynamics CRM System einführen. Dieser Tank
 sollte die verfügbare Energie für die Geschenke repräsentieren. Erstelle
 die Entitäten wie sie benötigt wird um die Anforderungen der anderen
 Beispiele umsetzten zu können.
-
+Die Energie wird pro Ort (Postleitzahl) gespeichert.
 ## Aufgabe 2: Ergänzung der Kontaktentität
 
 Um den Schlimmheitsgrad (1-100) jedes Kindes direkt in der
