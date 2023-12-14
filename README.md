@@ -105,6 +105,7 @@ https://github.com/wlumetsberger/DynamicsSalesChristmasStory/tree/master/az-func
 
 Nützliche Links:
 
+[XRM Toolbox](https://www.xrmtoolbox.com/)
   
 [Dataverse developer documentation - Power Apps \| Microsoft
 Learn](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/)
